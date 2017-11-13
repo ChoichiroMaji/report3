@@ -1,10 +1,10 @@
 package jp.ac.uryukyu.ie.e175715;
 
 public class LivingThing {
-    String name;
-    int hitPoint;
-    int attack;
-    boolean dead;
+    private String name;
+    private int hitPoint;
+    private int attack;
+    private boolean dead;
 
     public LivingThing (String name, int maximumHP, int attack) {
         this.name = name;
@@ -18,14 +18,30 @@ public class LivingThing {
      * getterメソッドと同等。生死をboolean表現しているためメソッド名をisDead()とした。
      * @return boolean
      */
+    public String getName(){
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getHitPoint(){
+        return hitPoint;
+    }
+    public void setHitPoint(int hitPoint){
+        this.hitPoint = hitPoint;
+    }
+    public int getAttack(){
+        return attack;
+    }
+    public void setAttack(int attack){
+        this.attack = attack;
+    }
     public boolean isDead() {
         return dead;
     }
-
-    public String getName() {
-        return name;
+    public void setDead(boolean dead){
+        this.dead = dead;
     }
-
     /**
      * LivingThingへ攻撃するメソッド。
      * attackに応じて乱数でダメージを算出し、opponent.wounded()によりダメージ処理を実行。
@@ -52,4 +68,5 @@ public class LivingThing {
             System.out.printf("%sは倒れた。\n", name);
         }
     }
+
 }
